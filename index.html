@@ -24,7 +24,7 @@
     h1 {
       margin-bottom: 20px;
       font-size: 24px;
-      colour: #333;
+      color: #333;
     }
     .input-group {
       margin-bottom: 20px;
@@ -78,6 +78,7 @@
 
     document.querySelectorAll('input').forEach(input => {
       input.addEventListener('input', calculateAlcoholValue);
+      input.addEventListener('change', calculateAlcoholValue); // Added for mobile compatibility
     });
   </script>
 </body>
