@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alcohol Value Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      colour: #333;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Alcohol Value Calculator</h1>
+    <div class="input-group">
+      <label for="price">Drink Price (£):</label><br>
+      <input type="number" id="price" step="0.01" min="0" placeholder="Enter price">
+    </div>
+    <div class="input-group">
+      <label for="volume">Drink Volume (ml):</label><br>
+      <input type="number" id="volume" step="1" min="0" placeholder="Enter volume">
+    </div>
+    <div class="input-group">
+      <label for="abv">Drink ABV (%):</label><br>
+      <input type="number" id="abv" step="0.1" min="0" max="100" placeholder="Enter ABV">
+    </div>
+    <div class="result" id="result">Alcohol Value: --</div>
+  </div>
+  <script>
+    function calculateAlcoholValue() {
+      const price = parseFloat(document.getElementById('price').value) || 0;
+      const volume = parseFloat(document.getElementById('volume').value) || 0;
+      const abv = parseFloat(document.getElementById('abv').value) || 0;
+
+      if (price > 0 && volume > 0 && abv > 0) {
+        const value = (volume / price) * (abv / 100);
+        document.getElementById('result').textContent = `Alcohol Value: ${value.toFixed(2)}`;
+      } else {
+        document.getElementById('result').textContent = 'Alcohol Value: --';
+      }
+    }
+
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('input', calculateAlcoholValue);
+    });
+  </script>
+</body>
+</html>
