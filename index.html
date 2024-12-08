@@ -4,50 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🍻 Alcohol Values</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 20px;
-      padding: 20px;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 400px;
-    }
-    h1 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      color: #333;
-    }
-    .input-group {
-      margin-bottom: 20px;
-    }
-    input {
-      width: 80%;
-      padding: 10px;
-      margin-top: 5px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .result {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #2c3e50;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Alcohol Value Calculators</h1>
@@ -56,15 +13,15 @@
   <div class="container" id="calculator1">
     <h2>Drink 1</h2>
     <div class="input-group">
-      <label for="price1">Drink Price (£):</label><br>
-      <input type="number" id="price1" step="0.01" min="0" placeholder="Enter price">
+      <label for="price1">Price (£):</label><br>
+      <input type="number" id="price1" step="1" min="0" placeholder="Enter price">
     </div>
     <div class="input-group">
-      <label for="volume1">Drink Volume (ml):</label><br>
-      <input type="number" id="volume1" step="1" min="0" placeholder="Enter volume">
+      <label for="volume1">Volume (ml):</label><br>
+      <input type="number" id="volume1" step="10" min="0" placeholder="Enter volume">
     </div>
     <div class="input-group">
-      <label for="abv1">Drink ABV (%):</label><br>
+      <label for="abv1">ABV (%):</label><br>
       <input type="number" id="abv1" step="0.1" min="0" max="100" placeholder="Enter ABV">
     </div>
     <div class="result" id="result1">Alcohol Value: --</div>
@@ -74,15 +31,15 @@
   <div class="container" id="calculator2">
     <h2>Drink 2</h2>
     <div class="input-group">
-      <label for="price2">Drink Price (£):</label><br>
-      <input type="number" id="price2" step="0.01" min="0" placeholder="Enter price">
+      <label for="price2">Price (£):</label><br>
+      <input type="number" id="price2" step="1" min="0" placeholder="Enter price">
     </div>
     <div class="input-group">
-      <label for="volume2">Drink Volume (ml):</label><br>
-      <input type="number" id="volume2" step="1" min="0" placeholder="Enter volume">
+      <label for="volume2">Volume (ml):</label><br>
+      <input type="number" id="volume2" step="10" min="0" placeholder="Enter volume">
     </div>
     <div class="input-group">
-      <label for="abv2">Drink ABV (%):</label><br>
+      <label for="abv2">ABV (%):</label><br>
       <input type="number" id="abv2" step="0.1" min="0" max="100" placeholder="Enter ABV">
     </div>
     <div class="result" id="result2">Alcohol Value: --</div>
@@ -92,15 +49,15 @@
   <div class="container" id="calculator3">
     <h2>Drink 3</h2>
     <div class="input-group">
-      <label for="price3">Drink Price (£):</label><br>
-      <input type="number" id="price3" step="0.01" min="0" placeholder="Enter price">
+      <label for="price3">Price (£):</label><br>
+      <input type="number" id="price3" step="1" min="0" placeholder="Enter price">
     </div>
     <div class="input-group">
-      <label for="volume3">Drink Volume (ml):</label><br>
-      <input type="number" id="volume3" step="1" min="0" placeholder="Enter volume">
+      <label for="volume3">Volume (ml):</label><br>
+      <input type="number" id="volume3" step="10" min="0" placeholder="Enter volume">
     </div>
     <div class="input-group">
-      <label for="abv3">Drink ABV (%):</label><br>
+      <label for="abv3">ABV (%):</label><br>
       <input type="number" id="abv3" step="0.1" min="0" max="100" placeholder="Enter ABV">
     </div>
     <div class="result" id="result3">Alcohol Value: --</div>
@@ -110,50 +67,20 @@
   <div class="container" id="calculator4">
     <h2>Drink 4</h2>
     <div class="input-group">
-      <label for="price4">Drink Price (£):</label><br>
-      <input type="number" id="price4" step="0.01" min="0" placeholder="Enter price">
+      <label for="price4">Price (£):</label><br>
+      <input type="number" id="price4" step="1" min="0" placeholder="Enter price">
     </div>
     <div class="input-group">
-      <label for="volume4">Drink Volume (ml):</label><br>
-      <input type="number" id="volume4" step="1" min="0" placeholder="Enter volume">
+      <label for="volume4">Volume (ml):</label><br>
+      <input type="number" id="volume4" step="10" min="0" placeholder="Enter volume">
     </div>
     <div class="input-group">
-      <label for="abv4">Drink ABV (%):</label><br>
+      <label for="abv4">ABV (%):</label><br>
       <input type="number" id="abv4" step="0.1" min="0" max="100" placeholder="Enter ABV">
     </div>
     <div class="result" id="result4">Alcohol Value: --</div>
   </div>
 
-  <script>
-    function addCalculatorListeners(calculatorId) {
-      const priceInput = document.getElementById(`price${calculatorId}`);
-      const volumeInput = document.getElementById(`volume${calculatorId}`);
-      const abvInput = document.getElementById(`abv${calculatorId}`);
-      const resultElement = document.getElementById(`result${calculatorId}`);
-
-      function calculateAlcoholValue() {
-        const price = parseFloat(priceInput.value) || 0;
-        const volume = parseFloat(volumeInput.value) || 0;
-        const abv = parseFloat(abvInput.value) || 0;
-
-        if (price > 0 && volume > 0 && abv > 0) {
-          const value = (volume / price) * (abv / 100);
-          resultElement.textContent = `Alcohol Value: ${value.toFixed(2)}`;
-        } else {
-          resultElement.textContent = 'Alcohol Value: --';
-        }
-      }
-
-      priceInput.addEventListener('input', calculateAlcoholValue);
-      priceInput.addEventListener('change', calculateAlcoholValue);
-      volumeInput.addEventListener('input', calculateAlcoholValue);
-      volumeInput.addEventListener('change', calculateAlcoholValue);
-      abvInput.addEventListener('input', calculateAlcoholValue);
-      abvInput.addEventListener('change', calculateAlcoholValue);
-    }
-
-    // Add event listeners for all 4 calculators
-    [1, 2, 3, 4].forEach(addCalculatorListeners);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
