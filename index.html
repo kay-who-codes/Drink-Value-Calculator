@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🍻 Alcohol Values</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
+<!-- Header Bar -->
+<div id="header"></div>
+
+<!-- Main Content -->
   <h1>Alcohol Value Calculators</h1>
 
   <!-- Calculator 1 -->
@@ -47,14 +52,14 @@
 
   <!-- Calculator 3 -->
   <div class="container" id="calculator3">
-    <h2>Drink 3</h2>
+    <h2>440ml Can</h2>
     <div class="input-group">
       <label for="price3">Price (£):</label><br>
       <input type="number" id="price3" step="1" min="0" placeholder="Enter price">
     </div>
     <div class="input-group">
       <label for="volume3">Volume (ml):</label><br>
-      <input type="number" id="volume3" step="10" min="0" placeholder="Enter volume">
+      <input type="number" value="440" id="volume3" step="10" min="0" placeholder="Enter volume">
     </div>
     <div class="input-group">
       <label for="abv3">ABV (%):</label><br>
@@ -65,14 +70,14 @@
 
   <!-- Calculator 4 -->
   <div class="container" id="calculator4">
-    <h2>Drink 4</h2>
+    <h2>568ml Drink</h2>
     <div class="input-group">
       <label for="price4">Price (£):</label><br>
       <input type="number" id="price4" step="1" min="0" placeholder="Enter price">
     </div>
     <div class="input-group">
       <label for="volume4">Volume (ml):</label><br>
-      <input type="number" id="volume4" step="10" min="0" placeholder="Enter volume">
+      <input type="number" value="568" id="volume4" step="10" min="0" placeholder="Enter volume">
     </div>
     <div class="input-group">
       <label for="abv4">ABV (%):</label><br>
@@ -81,6 +86,43 @@
     <div class="result" id="result4">Alcohol Value: --</div>
   </div>
 
-  <script src="script.js"></script>
+    <!-- Calculator 5 -->
+    <div class="container" id="calculator5">
+      <h2>440ml Multipack</h2>
+      <div class="input-group">
+        <label for="price5">Price (£):</label><br>
+        <input type="number" id="price5" step="1" min="0" placeholder="Enter price">
+      </div>
+      <div class="input-group">
+        <label for="volume5">Volume (ml):</label><br>
+        <input type="number" value="1760" id="volume5" step="10" min="0" placeholder="Enter volume">
+      </div>
+      <div class="input-group">
+        <label for="abv5">ABV (%):</label><br>
+        <input type="number" id="abv5" step="0.1" min="0" max="100" placeholder="Enter ABV">
+      </div>
+      <div class="result" id="result5">Alcohol Value: --</div>
+    </div>
+  
+    <!-- Calculator 6 -->
+    <div class="container" id="calculator6">
+      <h2>568ml Multipack</h2>
+      <div class="input-group">
+        <label for="price6">Price (£):</label><br>
+        <input type="number" id="price6" step="1" min="0" placeholder="Enter price">
+      </div>
+      <div class="input-group">
+        <label for="volume6">Volume (ml):</label><br>
+        <input type="number" value="2272" id="volume6" step="10" min="0" placeholder="Enter volume">
+      </div>
+      <div class="input-group">
+        <label for="abv6">ABV (%):</label><br>
+        <input type="number" id="abv6" step="0.1" min="0" max="100" placeholder="Enter ABV">
+      </div>
+      <div class="result" id="result6">Alcohol Value: --</div>
+    </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/header.js"></script>
 </body>
 </html>
