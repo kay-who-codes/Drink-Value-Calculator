@@ -4,6 +4,8 @@ function addCalculatorListeners(calculatorId) {
   const abvInput = document.getElementById(`abv${calculatorId}`);
   const resultElement = document.getElementById(`result${calculatorId}`);
 
+  console.log(`Calculator ${calculatorId} elements:`, priceInput, volumeInput, abvInput, resultElement);
+
   function calculateAlcoholValue() {
     const price = parseFloat(priceInput.value) || 0;
     const volume = parseFloat(volumeInput.value) || 0;
@@ -34,4 +36,4 @@ function addCalculatorListeners(calculatorId) {
 }
 
 // Add event listeners for all 4 calculators
-[1, 2, 3, 4, 5, 6].forEach(addCalculatorListeners);
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].forEach(addCalculatorListeners);
