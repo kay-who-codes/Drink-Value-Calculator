@@ -17,11 +17,11 @@ A simple web application that helps users calculate the alcohol value of differe
 2. Enter the **Price (£)** of your drink.
 3. Enter the **Volume (ml)** of your drink.
 4. Enter the **ABV (%)** of your drink.
-5. The app will automatically calculate the alcohol value based on the formula:  
-   \[
-   \text{Alcohol Value} = \left( \frac{\text{Volume}}{\text{Price}} \right) \times \left( \frac{\text{ABV}}{100} \right)
-   \]
-6. Compare different drinks to find the best value for money!
+5. The app will automatically calculate the alcohol value based on the formula:
+   
+` Alcohol Value = (Volume / Price) x ABV %`
+
+7. Compare different drinks to find the best value for money!
 
 ## Files
 
